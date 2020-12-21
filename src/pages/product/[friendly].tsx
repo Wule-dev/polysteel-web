@@ -1,7 +1,12 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
-const Products = (): JSX.Element => {
+const Product = (): JSX.Element => {
+  const router = useRouter();
+  const { friendly } = router.query;
+  console.log(friendly);
+
   return (
     <>
       <Head
@@ -18,4 +23,4 @@ const Products = (): JSX.Element => {
   );
 };
 
-export default Products;
+export default Product;

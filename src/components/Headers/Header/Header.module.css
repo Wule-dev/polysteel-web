@@ -72,13 +72,13 @@
 .iconsMenu ul {
   position: absolute;
   left: 50%;
-  top: 100px;
   width: 1200px;
+  top: 100px;
   transform: translate(-50%,0);
   columns: 3;
   z-index: 9;
+  padding: 0px 20px;
   background: white;
-  padding: 20px;
   list-style: none;
   max-height: 0px;
   overflow: hidden;
@@ -114,6 +114,8 @@
   max-height: 100vh!important;
   overflow: auto!important;
   opacity: 1!important;
+  top: 100px!important;
+  padding: 20px!important;
 }
 
 .productBtn i {

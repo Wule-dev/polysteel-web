@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         <div className="row">
           <div className="col">
             <img
-              src="./images/logo.png"
+              src="/images/logo.png"
               alt="PolySteel"
               title="PolySteel"
               className="img-responsive"
@@ -44,13 +44,13 @@ const Footer: React.FC = () => {
             <h3>Mapa do Site</h3>
             <ul>
               <li>
-                <a href="#url">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="#url">Produtos</a>
+                <a href="/products">Produtos</a>
               </li>
               <li>
-                <a href="#url">Sobre Nós</a>
+                <a href="/empresa">Sobre Nós</a>
               </li>
               <li>
                 <a href="#url">Termos de Uso</a>

@@ -11,8 +11,8 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-auto">
-            <a href="./">
-              <img src="./images/logo.png" alt="PolySteel" />
+            <a href="/">
+              <img src="/images/logo.png" alt="PolySteel" />
             </a>
           </div>
           <div className={`${styles.searchInput} col-md`}>
