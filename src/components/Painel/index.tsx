@@ -2,19 +2,28 @@ import React from 'react';
 import Slider from 'react-slick';
 import { PainelProps } from '../../types';
 
-const Painel: React.FC<PainelProps> = ({ children }: PainelProps) => {
+const Painel: React.FC<PainelProps> = ({
+  children,
+  autoplay = false,
+  controls = false,
+  dots = false,
+  items,
+  title,
+}: PainelProps) => {
   const settings = {
-    dots: false,
+    dots,
     infinite: true,
-    arrows: false,
+    arrows: controls,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
+    slidesToShow: items,
+    slidesToScroll: items,
+    autoplay,
+    title: title || '',
   };
 
   return (
     <div className="container painel">
+      {title !== '' ? <h2>{title}</h2> : ''}
       <Slider {...settings}>{children}</Slider>
     </div>
   );

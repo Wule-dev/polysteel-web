@@ -1,6 +1,6 @@
 import React from 'react';
 import HeadNext from 'next/head';
-import { HeadProps } from '../../types';
+import { HeadProps } from '../../../types';
 
 const Head: React.FC<HeadProps> = ({
   title,
