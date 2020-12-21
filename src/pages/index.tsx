@@ -16,7 +16,14 @@ const Home = (): JSX.Element => {
       </Painel>
       <Tabs />
       <About />
-      <Painel controls autoplay={false} dots items={3} title="Destaques">
+      <Painel
+        controls
+        autoplay={false}
+        dots
+        items={3}
+        title="Destaques"
+        persClass="marginItems"
+      >
         <div className="postItem">
           <img
             src="./images/post1.jpg"

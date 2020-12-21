@@ -114,3 +114,7 @@ p.therm {
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6502976190476191) 81%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
 }
+
+.marginItems .slick-slide {
+  padding: 0px 5px;
+}

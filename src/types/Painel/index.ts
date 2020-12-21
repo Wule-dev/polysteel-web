@@ -5,4 +5,5 @@ export type PainelProps = {
   items: number;
   controls?: boolean;
   title?: string;
+  persClass?: string;
 };
