@@ -1,0 +1,49 @@
+.header {
+  border-bottom: 1px solid #DDD;
+  padding: 20px;
+}
+
+.searchBox {
+  border-radius: 3px;
+  border: 1px solid #CBCBCB;
+  padding: 10px;
+  font-size: 13pt;
+  outline: none;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.searchBox:focus {
+  border: 1px solid #FF4C00;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 15px;
+  padding: 10px 20px;
+  border-radius: 0px 4px 4px 0px;
+  background: #FF4C00;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  height: 100%;
+}
+
+.searchBtn svg {
+  color: white;
+}
+
+.iconsMenu a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 5px;
+}
+
+.iconsMenu svg {
+  color: #444;
+}
+
+.productBtn svg {
+  margin-left: 10px;
+  color: #444;
+}

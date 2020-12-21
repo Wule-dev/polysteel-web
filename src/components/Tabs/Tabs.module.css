@@ -1,0 +1,24 @@
+.tabs {
+  text-align: center;
+}
+
+.tabs button {
+  border: 0px;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  margin-right: 10px;
+  outline: none;
+}
+
+.tabs button:hover {
+  color: #444;
+}
+
+.tabs .buttonActive {
+  color: #FF4D00;
+  border-bottom: 3px solid #FF4D00;
+}
