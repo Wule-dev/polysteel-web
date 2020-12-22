@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 <a href="/termos">Termos de Uso</a>
               </li>
               <li>
-                <a href="#url">Fale Conosco</a>
+                <a href="/contato">Fale Conosco</a>
               </li>
               <li>
                 <a href="#url">Mapa do Site</a>
@@ -84,11 +84,11 @@ const Footer: React.FC = () => {
                   (11) 99658-7395
                 </a>
               </li>
-              <br />
-              <p className="therm">
-                Atendimento de Seg à Sex, das 08:00 às 18:00
-              </p>
             </ul>
+            <br />
+            <p className="therm">
+              Atendimento de Seg à Sex, das 08:00 às 18:00
+            </p>
           </div>
           <div className="col-md col-12">
             <h3>Nossa Localização</h3>

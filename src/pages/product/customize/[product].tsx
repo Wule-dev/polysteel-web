@@ -34,42 +34,34 @@ const Product = (): JSX.Element => {
                 </div>
                 <div className="col-md-4">20 x 30cm</div>
               </div>
-              <h3>Conteúdo da Placa</h3>
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-              </div>
-              <h3>Conteúdo da Placa</h3>
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-              </div>
-              <h3>Conteúdo da Placa</h3>
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-              </div>
-              <h3>Conteúdo da Placa</h3>
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-              </div>
-              <h3>Conteúdo da Placa</h3>
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-              </div>
             </div>
             <div className="col-md-4">
               <div className={`row ${styles.contain} ${styles.fixedTop}`}>
                 Resumo
-                <p>Placa de Inauguração</p>
+                <p>
+                  Placa de Inauguração
+                  <br />
+                  Tamanho: 20 x 30 cm
+                  <br />
+                  Opcional: Sem
+                  <br />
+                  Opcional Acabamento: Dupla Face
+                </p>
+                <p className="text-right">
+                  <a href="/cart" type="button" className={styles.btnBuy}>
+                    Continuar
+                  </a>
+                </p>
               </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-8">
+              <p className="text-right">
+                <a href="/cart" type="button" className={styles.btnBuy}>
+                  Continuar
+                </a>
+              </p>
             </div>
           </div>
         </div>

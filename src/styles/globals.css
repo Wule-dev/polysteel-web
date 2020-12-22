@@ -187,3 +187,19 @@ label input.erroInput {
 .pageContent {
   padding-bottom: 40px;
 }
+
+p.text-right {
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
+}
+
+textarea {
+  padding: 15px;
+  display: block;
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  transition: box-shadow 0.5s;
+  resize: none;
+}
