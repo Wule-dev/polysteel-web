@@ -11,7 +11,7 @@ const Head: React.FC<HeadProps> = ({
     <HeadNext>
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="title" content={title} />
+      <meta name="title" content={`${`${title} - Poly-Steel`} - Poly-Steel`} />
       <meta name="author" content="http://wule.com.br/" />
       <meta name="robots" content="all" />
       <meta name="geo.position" content="geoLatitude;geoLongitude" />
@@ -48,10 +48,10 @@ const Head: React.FC<HeadProps> = ({
         href="source/images/favicon.png"
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{title}</title>
+      <title>{`${title} - Poly-Steel`}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="Page-Topic" content={title} />
+      <meta name="Page-Topic" content={`${title} - Poly-Steel`} />
       <link rel="canonical" href="https://www.carpede.com/" />
       <meta name="image" content="https://www.carpede.com/images/card.jpg" />
       <meta
@@ -59,13 +59,13 @@ const Head: React.FC<HeadProps> = ({
         content="https://www.carpede.com/images/card.jpg"
       />
       <meta name="twitter:url" content="https://www.carpede.com/" />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={`${title} - Poly-Steel`} />
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
         content="https://www.carpede.com/images/card.jpg"
       />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={`${title} - Poly-Steel`} />
       <meta property="og:url" content="https://www.carpede.com/" />
       <meta
         property="og:image"

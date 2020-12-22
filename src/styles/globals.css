@@ -44,6 +44,14 @@ a {
   box-sizing: border-box;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  margin: auto;
+}
+
 .painel {
   padding: 30px 15px;
 }
@@ -117,4 +125,32 @@ p.therm {
 
 .marginItems .slick-slide {
   padding: 0px 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+label input {
+  padding: 15px;
+  display: block;
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+}
+
+.btn-primary {
+  padding: 15px 50px;
+  background: #FF4C00;
+  border: 0px;
+  color: white;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.pageContent {
+  padding-bottom: 40px;
 }

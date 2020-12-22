@@ -1,5 +1,9 @@
 .tabs {
   text-align: center;
+  display: flex;
+  overflow: auto;
+  word-wrap: none;
+  white-space: nowrap;
 }
 
 .tabs button {

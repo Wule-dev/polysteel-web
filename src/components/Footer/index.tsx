@@ -7,13 +7,13 @@ const Footer: React.FC = () => {
       <div className={styles.footerBar}>
         <div className="container">
           <div className="row text-center">
-            <div className="col">
+            <div className="col-md col-12">
               <a href="javascrit:void()">Perguntas Frequentes</a>
             </div>
-            <div className="col">
+            <div className="col-md col-12">
               <a href="javascrit:void()">Envio de Arquivos</a>
             </div>
-            <div className="col">
+            <div className="col-md col-12">
               <a href="javascrit:void()">Peça Pelo WhatsApp</a>
             </div>
           </div>
@@ -21,11 +21,11 @@ const Footer: React.FC = () => {
       </div>
       <div className={`container ${styles.footer}`}>
         <div className="row">
-          <div className="col">
+          <div className="col-md col-12">
             <img
               src="/images/logo.png"
-              alt="PolySteel"
-              title="PolySteel"
+              alt="Poly-Steel"
+              title="Poly-Steel"
               className="img-responsive"
             />
             <p className={styles.socialLinks}>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               </a>
             </p>
           </div>
-          <div className="col">
+          <div className="col-md col-12">
             <h3>Mapa do Site</h3>
             <ul>
               <li>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 <a href="/empresa">Sobre Nós</a>
               </li>
               <li>
-                <a href="#url">Termos de Uso</a>
+                <a href="/termos">Termos de Uso</a>
               </li>
               <li>
                 <a href="#url">Fale Conosco</a>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div className={`col ${styles.iconsMargin}`}>
+          <div className={`col-md col-12 ${styles.iconsMargin}`}>
             <h3>FALE CONOSCO</h3>
             <ul>
               <li>
@@ -90,13 +90,12 @@ const Footer: React.FC = () => {
               </p>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-md col-12">
             <h3>Nossa Localização</h3>
             <iframe
-              title="Polysteel"
+              title="Poly-steel"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.735716942697!2d-46.6199934844066!3d-23.577933468091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5963d1a1c0ed%3A0x7518f4b5f30ca6fe!2sPoly-Steel!5e0!3m2!1spt-BR!2sbr!4v1608558100171!5m2!1spt-BR!2sbr"
-              width="400"
-              height="150"
+              className={styles.iframe}
               frameBorder="0"
               aria-hidden="false"
             />

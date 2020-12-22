@@ -19,6 +19,15 @@ const Painel: React.FC<PainelProps> = ({
     slidesToShow: items,
     slidesToScroll: items,
     autoplay,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
     title: title || '',
   };
 

@@ -61,11 +61,7 @@ const Tabs = (): JSX.Element => {
           Placas de Inauguração Interna e Externa
         </button>
       </div>
-      <div className="row">
-        {Object.entries(user).map((elem, key) => (
-          <div className="col-md-4">{elem}</div>
-        ))}
-      </div>
+      <div className="row" />
     </div>
   );
 };

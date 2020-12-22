@@ -5,7 +5,7 @@ const About: React.FC = () => {
     <div className="container about">
       <div className="row">
         <div className="col-md-7">
-          <h2>CONHEÇA A POLYSTEEL</h2>
+          <h2>CONHEÇA A POLY-STEEL</h2>
           <p className="subtitle">
             Fundada desde 1995, a Poly-Steel vem ocupando seu espaço no mercado,
             contratando sempre profissionais com vasto conhecimento técnico,
@@ -29,7 +29,7 @@ const About: React.FC = () => {
         <div className="col-md-5 vertical-align-center">
           <img
             src="./images/about.jpg"
-            alt="Sobre a PolySteel"
+            alt="Sobre a Poly-Steel"
             className="img-responsive"
           />
         </div>

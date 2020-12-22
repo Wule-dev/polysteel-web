@@ -53,6 +53,10 @@
   font-size: 10pt;
 }
 
+.mobileMenu {
+  display: none!important;
+}
+
 .iconsMenu {
   position: initial;
 }
@@ -138,4 +142,19 @@
 .allProducts i {
   margin-left: 10px;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .iconsMenu {
+    display: none!important;
+  }
+
+  .mobileMenu {
+    display: block!important;
+    display: flex!important;
+  }
+
+  .mobileMenu a {
+    padding: 10px;
+  }
 }

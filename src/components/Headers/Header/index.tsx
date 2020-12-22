@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -10,9 +10,21 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className="container">
         <div className="row">
-          <div className="col-md-auto">
+          <div className="col-md-auto col">
             <a href="/">
-              <img src="/images/logo.png" alt="PolySteel" />
+              <img
+                src="/images/logo.png"
+                alt="Poly-Steel"
+                className="img-responsive"
+              />
+            </a>
+          </div>
+          <div className={`col-auto ${styles.mobileMenu}`}>
+            <a href="/login">
+              <i className="fa fa-user" />
+            </a>
+            <a href="/user">
+              <i className="fa fa-shopping-cart" />
             </a>
           </div>
           <div className={`${styles.searchInput} col-md`}>
@@ -128,7 +140,7 @@ const Header: React.FC = () => {
                 </a>
               </li>
             </ul>
-            <a href="/user">
+            <a href="/login">
               <i className="fa fa-user" />
             </a>
             <a href="/user">
