@@ -41,11 +41,11 @@ const Head: React.FC<HeadProps> = ({
       <meta property="og:image:type" content="image/jpg" />
       <meta property="og:image:width" content="250" />
       <meta property="og:image:height" content="250" />
-      <link rel="icon" href="source/images/favicon.png" type="image/x-icon" />
+      <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
       <link
         rel="shortcut icon"
         type="image/x-icon"
-        href="source/images/favicon.png"
+        href="/images/favicon.png"
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{`${title} - Poly-Steel`}</title>

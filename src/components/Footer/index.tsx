@@ -126,6 +126,14 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      <a
+        href="https://api.whatsapp.com/send?phone=5511996587395&text=Ol%C3%A1,%20tudo%20bem?"
+        className={styles.whatsButton}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <i className="fab fa-whatsapp" />
+      </a>
     </footer>
   );
 };

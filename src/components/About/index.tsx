@@ -28,7 +28,7 @@ const About: React.FC = () => {
         </div>
         <div className="col-md-5 vertical-align-center">
           <img
-            src="./images/about.jpg"
+            src="/images/about.jpg"
             alt="Sobre a Poly-Steel"
             className="img-responsive"
           />

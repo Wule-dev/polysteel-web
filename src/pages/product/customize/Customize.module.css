@@ -1,0 +1,16 @@
+.grayBack {
+  background: #F2F2F2;
+  padding-bottom: 40px;
+}
+
+.contain {
+  background: white;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.fixedTop {
+  position: sticky;
+  top: 20px;
+}

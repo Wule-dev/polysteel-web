@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 <span>PLACAS</span>
               </li>
               <li>
-                <a href="#a">Placa de Premiação</a>
+                <a href="/product/placa-premiacao">Placa de Premiação</a>
               </li>
               <li>
                 <a href="#a">Placa de Agradecimento</a>

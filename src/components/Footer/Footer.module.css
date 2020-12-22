@@ -81,3 +81,25 @@
   max-width: 400px;
   width: 100%;
 }
+
+.whatsButton {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background-color: #187A00;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25pt;
+  border-radius: 50%;
+  color: white;
+  animation: jump 3s infinite;
+}
+
+@keyframes jump {
+  0% {margin-bottom: 0px;}
+  5% {margin-bottom: 20px;}
+  10% {margin-bottom: 0px;}
+}
