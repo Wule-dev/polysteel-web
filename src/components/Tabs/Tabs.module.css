@@ -26,3 +26,35 @@
   color: #FF4D00;
   border-bottom: 3px solid #FF4D00;
 }
+
+.tabContent {
+  padding: 20px 0px;
+}
+
+.tabContent>div {
+  border: 1px solid #DCDCDC;
+  padding: 5px;
+  background: #F2F2F2;
+}
+
+.tabContent a {
+  padding: 10px;
+  display: block;
+}
+
+.tabContent p {
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.tabContent .price {
+  font-size: 10pt;
+}
+
+.tabContent .price span {
+  font-size: 12pt;
+  color: #FF4C00;
+  margin-left: 5px;
+  font-weight: bold;
+}

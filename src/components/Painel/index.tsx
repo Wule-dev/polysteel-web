@@ -28,12 +28,11 @@ const Painel: React.FC<PainelProps> = ({
         },
       },
     ],
-    title: title || '',
   };
 
   return (
     <div className={`container painel ${persClass}`}>
-      {title !== '' ? <h2>{title}</h2> : ''}
+      {!title ? '' : <h2>{title}</h2>}
       <Slider {...settings}>{children}</Slider>
     </div>
   );

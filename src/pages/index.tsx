@@ -10,14 +10,16 @@ const Home = (): JSX.Element => {
         keywords="placa de homenagem, placa de aço, troféus, banners, letras caixa, gráfica, gráfica rápida, placas adesivadas, placas com molduras, gráfica em são paulo, melhor serviço de gráfica em são paulo, melhor gráfica, gráfica mais rápida, melhor preço em placa em aço inox"
       />
       <Header />
-      <Painel controls={false} autoplay dots={false} items={1}>
-        <img src="./images/painel1.jpg" alt="Teste" />
-        <img src="./images/painel2.jpg" alt="Teste" />
-      </Painel>
+      <div className="topPainel">
+        <Painel controls={false} autoplay dots={false} items={1}>
+          <img src="./images/painel1.jpg" alt="Teste" />
+          <img src="./images/painel2.jpg" alt="Teste" />
+        </Painel>
+      </div>
       <Tabs />
       <About />
       <Painel
-        controls
+        controls={false}
         autoplay={false}
         dots
         items={3}

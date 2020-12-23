@@ -61,7 +61,22 @@ const Tabs = (): JSX.Element => {
           Placas de Inauguração Interna e Externa
         </button>
       </div>
-      <div className="row" />
+      <div className={`row ${styles.tabContent}`}>
+        <div className="col-md-3">
+          <a href="/product/placa-premiacao">
+            <img
+              src="/images/placa-inauguracao.jpg"
+              alt="Placa Inauguração"
+              className="img-responsive"
+            />
+            <p>PLACAS DE INAUGURAÇÃO</p>
+            <div className={styles.price}>
+              A partir de
+              <span>R$ 150,00</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
