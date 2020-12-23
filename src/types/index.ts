@@ -4,3 +4,4 @@ export * from './HomeDestaq';
 export * from './Product';
 export * from './Breadcrumb';
 export * from './User';
+export * from './Order';

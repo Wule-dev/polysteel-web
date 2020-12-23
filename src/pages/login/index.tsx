@@ -31,7 +31,7 @@ const Products = (): JSX.Element => {
           </div>
           <div className="col-md-5 offset-md-1">
             <h2>Ainda não sou cadastrado</h2>
-            <form action="">
+            <form action="/user/address/add">
               <label htmlFor="name">
                 <input type="text" placeholder="Nome" id="name" />
               </label>
@@ -44,6 +44,15 @@ const Products = (): JSX.Element => {
               <label htmlFor="phone">
                 <input type="text" placeholder="Telefone" id="phone" />
               </label>
+              <div className="pjProfile">
+                <button type="button">
+                  <span className="checkPj" />
+                  <div>
+                    <p>Cadastro Pessoa Jurídica</p>
+                    <span>Esse cadastro será utilizado para uma Empresa</span>
+                  </div>
+                </button>
+              </div>
               <button type="submit" className="btn-primary">
                 Cadastrar
               </button>

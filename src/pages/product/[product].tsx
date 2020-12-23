@@ -13,7 +13,6 @@ import styles from './Product.module.css';
 const Product = (): JSX.Element => {
   const router = useRouter();
   const { product } = router.query;
-  console.log(product);
 
   return (
     <>

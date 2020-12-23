@@ -1,0 +1,31 @@
+.Order {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #EEE;
+  margin-bottom: 20px;
+}
+
+.headOrder {
+  padding: 20px 15px;
+  background: #EEE;
+  font-weight: bold;
+}
+
+.headOrder span {
+  display: block;
+  font-weight: normal;
+  font-size: 10pt;
+  color: #818181;
+}
+
+.orderDetails {
+  padding: 20px 15px;
+}
+
+.orderDetails p {
+  display: block;
+  font-weight: normal;
+  font-size: 10pt;
+  color: #818181;
+  margin-bottom: 5px;
+}

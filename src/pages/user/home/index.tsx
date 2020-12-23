@@ -31,7 +31,7 @@ const HomeUser = (): JSX.Element => {
             </a>
           </div>
           <div className="col-md-4">
-            <a href="/user/history" className={styles.homeBtn}>
+            <a href="/user/order" className={styles.homeBtn}>
               <i className="far fa-calendar" />
               <div>
                 <h2>Pedidos</h2>
