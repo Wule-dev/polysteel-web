@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             <a href="/login">
               <i className="fa fa-user" />
             </a>
-            <a href="/user">
+            <a href="/cart">
               <i className="fa fa-shopping-cart" />
             </a>
           </div>
@@ -143,7 +143,7 @@ const Header: React.FC = () => {
             <a href="/login">
               <i className="fa fa-user" />
             </a>
-            <a href="/user">
+            <a href="/cart">
               <i className="fa fa-shopping-cart" />
             </a>
           </div>

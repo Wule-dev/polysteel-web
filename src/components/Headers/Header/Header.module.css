@@ -20,7 +20,7 @@
   font-size: 13pt;
   outline: none;
   width: 100%;
-  transition: all 0.5s;
+  transition: border 0.5s;
 }
 
 .searchBox:focus {
