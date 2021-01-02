@@ -3,7 +3,7 @@ import AuthContext from '../../contexts/auth';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
 const Products: React.FC = () => {
-  const { login } = useContext(AuthContext);
+  const { login, logout } = useContext(AuthContext);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -76,7 +76,11 @@ const Products: React.FC = () => {
                   </div>
                 </button>
               </div>
-              <button type="submit" className="btn-primary">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => logout()}
+              >
                 Cadastrar
               </button>
             </form>

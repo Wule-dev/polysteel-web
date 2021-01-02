@@ -6,39 +6,30 @@ import api from '../services/api';
 import { AuthContextType } from '../types';
 
 const AuthContext = createContext<AuthContextType>({
-  isAuthenticated: false,
-  isLoading: true,
   user: null,
+  loading: true,
 });
 
 export const AuthProvider: React.FC = ({ children }: any) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [pathname, setPathname] = useState('');
 
   const router = useRouter();
 
-  const login = async (email: string, password: string): Promise<any> => {
+  const login = async (email: string, password: string): Promise<void> => {
     try {
       const { data: token } = await api.post('/signin', { email, password });
       if (token) {
         Cookies.set('token', token, { expires: 60 });
         api.defaults.headers.Authorization = `Bearer ${token}`;
         const { data } = await api.get('/user');
-        Cookies.set('user', data, { expires: 60 });
-        setUser(data);
+        if (data) {
+          Cookies.set('user', data, { expires: 60 });
+          setUser(data);
+          router.push('/cart');
+        }
+        return;
       }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const register = async (name, email, password) => {
-    try {
-      const { data: token } = await api.post('/signin', {
-        email,
-        password,
-      });
     } catch (err) {
       console.log(err);
     }
@@ -46,31 +37,32 @@ export const AuthProvider: React.FC = ({ children }: any) => {
 
   const logout = () => {
     Cookies.remove('token');
+    Cookies.remove('user');
     setUser(null);
     delete api.defaults.headers.Authorization;
-    router.push('/signin');
+    router.push('/login');
   };
 
   useEffect(() => {
-    if (router.pathname === '/path' && !user) router.push('/login');
-    console.log(user)
-  }, [router.pathname]);
+    if (router.pathname === '/cart' && !user) router.push('/login'); // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
+  }, [router, user]);
 
   useEffect(() => {
-    async function loadUserFromCookies() {
-      const token = Cookies.get('token');
-      if (token) api.defaults.headers.Authorization = `Bearer ${token}`;
-      setLoading(false);
+    setLoading(true);
+    const token = Cookies.get('token');
+    if (token) api.defaults.headers.Authorization = `Bearer ${token}`;
+    if (!user) {
+      const currentUser = Cookies.get('user');
+      if (currentUser) setUser(JSON.parse(currentUser));
     }
-    loadUserFromCookies();
-  }, []);
+    setLoading(false);
+  }, [user]);
 
   return (
     <AuthContext.Provider
       value={{
-        isAuthenticated: !!user,
-        isLoading: loading,
         user,
+        loading,
         login,
         logout,
       }}
@@ -80,6 +72,12 @@ export const AuthProvider: React.FC = ({ children }: any) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const Loading: React.FC = ({ children }: any) => {
+  const { loading } = useContext(AuthContext);
+  if (loading) {
+    return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
+  }
+  return children;
+};
 
 export default AuthContext;
