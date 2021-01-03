@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import AuthContext from '../../contexts/auth';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
-const Products = (): JSX.Element => {
+const Products: React.FC = () => {
+  const { login, logout } = useContext(AuthContext);
+
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    if (!email) return alert('Escreva um email válido');
+    if (!password) return alert('Escreva uma senha válida');
+    return login(email, password);
+  };
+
   return (
     <>
       <Head
@@ -17,12 +30,22 @@ const Products = (): JSX.Element => {
         <div className="row">
           <div className="col-md-5 offset-md-1">
             <h2>Já sou cadastrado</h2>
-            <form action="/user/home">
+            <form onSubmit={(e) => handleSignIn(e)}>
               <label htmlFor="email">
-                <input type="text" placeholder="E-mail" id="email" />
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </label>
               <label htmlFor="password">
-                <input type="text" placeholder="Senha" id="password" />
+                <input
+                  type="text"
+                  placeholder="Senha"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </label>
               <button type="submit" className="btn-primary">
                 Entrar
@@ -53,7 +76,11 @@ const Products = (): JSX.Element => {
                   </div>
                 </button>
               </div>
-              <button type="submit" className="btn-primary">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => logout()}
+              >
                 Cadastrar
               </button>
             </form>
