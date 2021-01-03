@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-auto col">
-            <Link as="a" href="/">
+            <Link href="/">
               <img
                 src="/images/logo.png"
                 alt="Poly-Steel"
@@ -19,10 +19,10 @@ const Header: React.FC = () => {
             </Link>
           </div>
           <div className={`col-auto ${styles.mobileMenu}`}>
-            <Link as="a" href="/login">
+            <Link href="/login">
               <i className="fa fa-user" />
             </Link>
-            <Link as="a" href="/cart">
+            <Link href="/cart">
               <i className="fa fa-shopping-cart" />
             </Link>
           </div>
@@ -54,125 +54,79 @@ const Header: React.FC = () => {
                 <span>PLACAS</span>
               </li>
               <li>
-                <Link as="a" href="/product/placa-premiacao">
-                  Placa de Premiação
-                </Link>
+                <Link href="/cart/teste">Placa de Premiação</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Agradecimento
-                </Link>
+                <Link href="#a">Placa de Agradecimento</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Parabenizar
-                </Link>
+                <Link href="#a">Placa de Parabenizar</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Parabenização
-                </Link>
+                <Link href="#a">Placa de Parabenização</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Tempo de Casa
-                </Link>
+                <Link href="#a">Placa de Tempo de Casa</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Reconhecimento
-                </Link>
+                <Link href="#a">Placa de Reconhecimento</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Inauguração
-                </Link>
+                <Link href="#a">Placa de Inauguração</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Plaquetas
-                </Link>
+                <Link href="#a">Plaquetas</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Identiﬁcação (Interna)
-                </Link>
+                <Link href="#a">Placa de Identiﬁcação (Interna)</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Identiﬁcação (Externa)
-                </Link>
+                <Link href="#a">Placa de Identiﬁcação (Externa)</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placa de Sinalização
-                </Link>
+                <Link href="#a">Placa de Sinalização</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placas de Acrílico (Diversos)
-                </Link>
+                <Link href="#a">Placas de Acrílico (Diversos)</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placas de Aço Inox (Diversos)
-                </Link>
+                <Link href="#a">Placas de Aço Inox (Diversos)</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Placas Diversas
-                </Link>
+                <Link href="#a">Placas Diversas</Link>
               </li>
               <li>
                 <span>Outros</span>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Troféus
-                </Link>
+                <Link href="#a">Troféus</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Totem
-                </Link>
+                <Link href="#a">Totem</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Letra Caixa
-                </Link>
+                <Link href="#a">Letra Caixa</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Banners
-                </Link>
+                <Link href="#a">Banners</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Túmulo/Jazigo
-                </Link>
+                <Link href="#a">Túmulo/Jazigo</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Crachá
-                </Link>
+                <Link href="#a">Crachá</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Diploma
-                </Link>
+                <Link href="#a">Diploma</Link>
               </li>
               <li>
                 <span>ADESIVOS</span>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Adesivos 1m² entregue sem corte
-                </Link>
+                <Link href="#a">Adesivos 1m² entregue sem corte</Link>
               </li>
               <li>
-                <Link as="a" href="#a">
-                  Adesivo 1m² com corte eletrônico
-                </Link>
+                <Link href="#a">Adesivo 1m² com corte eletrônico</Link>
               </li>
               <li className={styles.allProducts}>
                 <a href="/products/">
@@ -181,10 +135,10 @@ const Header: React.FC = () => {
                 </a>
               </li>
             </ul>
-            <Link as="a" href="/login">
+            <Link href="/login">
               <i className="fa fa-user" />
             </Link>
-            <Link as="a" href="/cart">
+            <Link href="/cart">
               <i className="fa fa-shopping-cart" />
             </Link>
           </div>
