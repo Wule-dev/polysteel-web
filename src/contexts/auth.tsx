@@ -44,7 +44,9 @@ export const AuthProvider: React.FC = ({ children }: any) => {
   };
 
   useEffect(() => {
-    if (router.pathname === '/cart' && !user) router.push('/login'); // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
+    const basePath = 'cart'; // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
+    const checkPath = router.pathname.indexOf(basePath) > -1;
+    if (checkPath && !user) router.push('/login');
   }, [router, user]);
 
   useEffect(() => {
