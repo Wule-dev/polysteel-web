@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './Header.module.css';
 import { MyButton } from '../..';
 
@@ -10,12 +11,17 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-auto col">
+<<<<<<< HEAD
             <MyButton to="/">
+=======
+            <Link href="/">
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
               <img
                 src="/images/logo.png"
                 alt="Poly-Steel"
                 className="img-responsive"
               />
+<<<<<<< HEAD
             </MyButton>
           </div>
           <div className={`col-auto ${styles.mobileMenu}`}>
@@ -25,6 +31,17 @@ const Header: React.FC = () => {
             <MyButton to="/cart">
               <i className="fa fa-shopping-cart" />
             </MyButton>
+=======
+            </Link>
+          </div>
+          <div className={`col-auto ${styles.mobileMenu}`}>
+            <Link href="/login">
+              <i className="fa fa-user" />
+            </Link>
+            <Link href="/cart">
+              <i className="fa fa-shopping-cart" />
+            </Link>
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
           </div>
           <div className={`${styles.searchInput} col-md`}>
             <div>
@@ -46,7 +63,7 @@ const Header: React.FC = () => {
                 setProductsMenu(!productsMenu);
               }}
             >
-              Produtos
+              Produtoss
               <i className="fa fa-bars" />
             </button>
             <ul className={productsMenu ? styles.submenuActive : ''}>
@@ -54,6 +71,7 @@ const Header: React.FC = () => {
                 <span>PLACAS</span>
               </li>
               <li>
+<<<<<<< HEAD
                 <MyButton to="/cart/teste">Placa de Premiação</MyButton>
               </li>
               <li>
@@ -94,11 +112,54 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <MyButton to="#a">Placas Diversas</MyButton>
+=======
+                <Link href="/cart/teste">Placa de Premiação</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Agradecimento</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Parabenizar</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Parabenização</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Tempo de Casa</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Reconhecimento</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Inauguração</Link>
+              </li>
+              <li>
+                <Link href="#a">Plaquetas</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Identiﬁcação (Interna)</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Identiﬁcação (Externa)</Link>
+              </li>
+              <li>
+                <Link href="#a">Placa de Sinalização</Link>
+              </li>
+              <li>
+                <Link href="#a">Placas de Acrílico (Diversos)</Link>
+              </li>
+              <li>
+                <Link href="#a">Placas de Aço Inox (Diversos)</Link>
+              </li>
+              <li>
+                <Link href="#a">Placas Diversas</Link>
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
               </li>
               <li>
                 <span>Outros</span>
               </li>
               <li>
+<<<<<<< HEAD
                 <MyButton to="#a">Troféus</MyButton>
               </li>
               <li>
@@ -118,15 +179,43 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <MyButton to="#a">Diploma</MyButton>
+=======
+                <Link href="#a">Troféus</Link>
+              </li>
+              <li>
+                <Link href="#a">Totem</Link>
+              </li>
+              <li>
+                <Link href="#a">Letra Caixa</Link>
+              </li>
+              <li>
+                <Link href="#a">Banners</Link>
+              </li>
+              <li>
+                <Link href="#a">Túmulo/Jazigo</Link>
+              </li>
+              <li>
+                <Link href="#a">Crachá</Link>
+              </li>
+              <li>
+                <Link href="#a">Diploma</Link>
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
               </li>
               <li>
                 <span>ADESIVOS</span>
               </li>
               <li>
+<<<<<<< HEAD
                 <MyButton to="#a">Adesivos 1m² entregue sem corte</MyButton>
               </li>
               <li>
                 <MyButton to="#a">Adesivo 1m² com corte eletrônico</MyButton>
+=======
+                <Link href="#a">Adesivos 1m² entregue sem corte</Link>
+              </li>
+              <li>
+                <Link href="#a">Adesivo 1m² com corte eletrônico</Link>
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
               </li>
               <li className={styles.allProducts}>
                 <MyButton to="/products/">
@@ -135,12 +224,21 @@ const Header: React.FC = () => {
                 </MyButton>
               </li>
             </ul>
+<<<<<<< HEAD
             <MyButton to="/login">
               <i className="fa fa-user" />
             </MyButton>
             <MyButton to="/cart">
               <i className="fa fa-shopping-cart" />
             </MyButton>
+=======
+            <Link href="/login">
+              <i className="fa fa-user" />
+            </Link>
+            <Link href="/cart">
+              <i className="fa fa-shopping-cart" />
+            </Link>
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
           </div>
         </div>
       </div>

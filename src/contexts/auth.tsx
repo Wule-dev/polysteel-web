@@ -13,7 +13,10 @@ const AuthContext = createContext<AuthContextType>({
 export const AuthProvider: React.FC = ({ children }: any) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+<<<<<<< HEAD
   const [error, setError] = useState(null);
+=======
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
 
   const router = useRouter();
 
@@ -27,12 +30,16 @@ export const AuthProvider: React.FC = ({ children }: any) => {
         if (data) {
           Cookies.set('user', data, { expires: 60 });
           setUser(data);
+<<<<<<< HEAD
           setError(null);
+=======
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
           router.push('/cart');
         }
         return;
       }
     } catch (err) {
+<<<<<<< HEAD
       setError(err.response.data);
     }
   };
@@ -49,6 +56,9 @@ export const AuthProvider: React.FC = ({ children }: any) => {
       }
     } catch (err) {
       setError(err.response.data);
+=======
+      console.log(err);
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
     }
   };
 
@@ -61,7 +71,11 @@ export const AuthProvider: React.FC = ({ children }: any) => {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
     const basePath = 'user'; // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
+=======
+    const basePath = 'cart'; // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
     const checkPath = router.pathname.indexOf(basePath) > -1;
     if (checkPath && !user) router.push('/login');
   }, [router, user]);
@@ -84,8 +98,11 @@ export const AuthProvider: React.FC = ({ children }: any) => {
         loading,
         login,
         logout,
+<<<<<<< HEAD
         join,
         error,
+=======
+>>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
       }}
     >
       {children}
