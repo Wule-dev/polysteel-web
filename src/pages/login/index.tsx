@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import AuthContext from '../../contexts/auth';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
-const Products = (): JSX.Element => {
+const Products: React.FC = () => {
+  const { login, logout, join, error } = useContext(AuthContext);
+  const [inputEmail, setinputEmail] = useState<boolean>(false);
+  const [inputPassword, setinputPassword] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
+
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [emailJoin, setEmailJoin] = useState<string>('');
+  const [passwordJoin, setPasswordJoin] = useState<string>('');
+  const [name, setName] = useState<string>('');
+
+  const handleSignIn = (e) => {
+    setinputEmail(false);
+    setinputPassword(false);
+    e.preventDefault();
+    if (!email) return setinputEmail(true);
+    if (!password) return setinputPassword(true);
+    return login(email, password);
+  };
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    return join(name, emailJoin, passwordJoin);
+  };
+
   return (
     <>
       <Head
@@ -17,12 +46,32 @@ const Products = (): JSX.Element => {
         <div className="row">
           <div className="col-md-5 offset-md-1">
             <h2>Já sou cadastrado</h2>
-            <form action="/user/home">
+            {error ? (
+              <div className="error">
+                <i className="fas fa-exclamation-circle" />
+                {error.message}
+              </div>
+            ) : (
+              ''
+            )}
+            <form onSubmit={(e) => handleSignIn(e)}>
               <label htmlFor="email">
-                <input type="text" placeholder="E-mail" id="email" />
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={inputEmail ? 'erroInput' : ''}
+                />
               </label>
               <label htmlFor="password">
-                <input type="text" placeholder="Senha" id="password" />
+                <input
+                  type="password"
+                  placeholder="Senha"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={inputPassword ? 'erroInput' : ''}
+                />
               </label>
               <button type="submit" className="btn-primary">
                 Entrar
@@ -31,29 +80,36 @@ const Products = (): JSX.Element => {
           </div>
           <div className="col-md-5 offset-md-1">
             <h2>Ainda não sou cadastrado</h2>
-            <form action="/user/address/add">
+            <form onSubmit={(e) => handleSignUp(e)}>
               <label htmlFor="name">
-                <input type="text" placeholder="Nome" id="name" />
-              </label>
-              <label htmlFor="cpf">
-                <input type="text" placeholder="CPF" id="cpf" />
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  id="name"
+                  onChange={(e) => setName(e.target.value)}
+                />
               </label>
               <label htmlFor="emailJoin">
-                <input type="text" placeholder="E-mail" id="emailJoin" />
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  id="emailJoin"
+                  onChange={(e) => setEmailJoin(e.target.value)}
+                />
               </label>
-              <label htmlFor="phone">
-                <input type="text" placeholder="Telefone" id="phone" />
+              <label htmlFor="passwordJoin">
+                <input
+                  type="password"
+                  placeholder="Senha"
+                  id="passwordJoin"
+                  onChange={(e) => setPasswordJoin(e.target.value)}
+                />
               </label>
-              <div className="pjProfile">
-                <button type="button">
-                  <span className="checkPj" />
-                  <div>
-                    <p>Cadastro Pessoa Jurídica</p>
-                    <span>Esse cadastro será utilizado para uma Empresa</span>
-                  </div>
-                </button>
-              </div>
-              <button type="submit" className="btn-primary">
+              <button
+                type="submit"
+                className="btn-primary"
+                onClick={() => logout()}
+              >
                 Cadastrar
               </button>
             </form>

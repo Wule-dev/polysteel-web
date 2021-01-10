@@ -208,6 +208,19 @@ label input.erroInput {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
+div.error {
+  background: #e74c3c;
+  font-size: 10pt;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+div.error i {
+  margin-right: 5px;
+}
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);

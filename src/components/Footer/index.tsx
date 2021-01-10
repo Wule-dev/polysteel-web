@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { MyButton } from '..';
 
 const Footer: React.FC = () => {
   return (
@@ -8,13 +9,13 @@ const Footer: React.FC = () => {
         <div className="container">
           <div className="row text-center">
             <div className="col-md col-12">
-              <a href="javascrit:void()">Perguntas Frequentes</a>
+              <MyButton to="javascrit:void()">Perguntas Frequentes</MyButton>
             </div>
             <div className="col-md col-12">
-              <a href="javascrit:void()">Envio de Arquivos</a>
+              <MyButton to="javascrit:void()">Envio de Arquivos</MyButton>
             </div>
             <div className="col-md col-12">
-              <a href="javascrit:void()">Peça Pelo WhatsApp</a>
+              <MyButton to="javascrit:void()">Peça Pelo WhatsApp</MyButton>
             </div>
           </div>
         </div>
@@ -29,37 +30,37 @@ const Footer: React.FC = () => {
               className="img-responsive"
             />
             <p className={styles.socialLinks}>
-              <a href="#face" className={styles.facebookBtn}>
+              <MyButton to="#face" className={styles.facebookBtn}>
                 <i className="fab fa-facebook-f" />
-              </a>
-              <a href="#instagram" className={styles.instagramBtn}>
+              </MyButton>
+              <MyButton to="#instagram" className={styles.instagramBtn}>
                 <i className="fab fa-instagram" />
-              </a>
-              <a href="#youtube" className={styles.youtubeBtn}>
+              </MyButton>
+              <MyButton to="#youtube" className={styles.youtubeBtn}>
                 <i className="fab fa-youtube" />
-              </a>
+              </MyButton>
             </p>
           </div>
           <div className="col-md col-12">
             <h3>Mapa do Site</h3>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <MyButton to="/">Home</MyButton>
               </li>
               <li>
-                <a href="/products">Produtos</a>
+                <MyButton to="/products">Produtos</MyButton>
               </li>
               <li>
-                <a href="/empresa">Sobre Nós</a>
+                <MyButton to="/empresa">Sobre Nós</MyButton>
               </li>
               <li>
-                <a href="/termos">Termos de Uso</a>
+                <MyButton to="/termos">Termos de Uso</MyButton>
               </li>
               <li>
-                <a href="/contato">Fale Conosco</a>
+                <MyButton to="/contato">Fale Conosco</MyButton>
               </li>
               <li>
-                <a href="#url">Mapa do Site</a>
+                <MyButton to="#url">Mapa do Site</MyButton>
               </li>
             </ul>
           </div>
@@ -67,22 +68,22 @@ const Footer: React.FC = () => {
             <h3>FALE CONOSCO</h3>
             <ul>
               <li>
-                <a href="tel:+551120635366">
+                <MyButton to="tel:+551120635366">
                   <i className="fa fa-phone" />
                   (11) 2063-5366
-                </a>
+                </MyButton>
               </li>
               <li>
-                <a href="tel:+551138063170">
+                <MyButton to="tel:+551138063170">
                   <i className="fa fa-phone" />
                   (11) 3806-3170
-                </a>
+                </MyButton>
               </li>
               <li>
-                <a href="tel:+5511996587395">
+                <MyButton to="tel:+5511996587395">
                   <i className="fab fa-whatsapp" />
                   (11) 99658-7395
-                </a>
+                </MyButton>
               </li>
             </ul>
             <br />
@@ -126,14 +127,14 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <a
-        href="https://api.whatsapp.com/send?phone=5511996587395&text=Ol%C3%A1,%20tudo%20bem?"
+      <MyButton
+        to="https://api.whatsapp.com/send?phone=5511996587395&text=Ol%C3%A1,%20tudo%20bem?"
         className={styles.whatsButton}
         rel="noopener noreferrer"
         target="_blank"
       >
         <i className="fab fa-whatsapp" />
-      </a>
+      </MyButton>
     </footer>
   );
 };
