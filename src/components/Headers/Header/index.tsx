@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import styles from './Header.module.css';
 import { MyButton } from '../..';
 
@@ -47,7 +46,7 @@ const Header: React.FC = () => {
                 setProductsMenu(!productsMenu);
               }}
             >
-              Produtoss
+              Produtos
               <i className="fa fa-bars" />
             </button>
             <ul className={productsMenu ? styles.submenuActive : ''}>
