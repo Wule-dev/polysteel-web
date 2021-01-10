@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { useContext, useState, useEffect } from 'react';
-=======
-import React, { useContext, useState } from 'react';
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
 import AuthContext from '../../contexts/auth';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
 const Products: React.FC = () => {
-<<<<<<< HEAD
   const { login, logout, join, error } = useContext(AuthContext);
   const [inputEmail, setinputEmail] = useState<boolean>(false);
   const [inputPassword, setinputPassword] = useState<boolean>(false);
@@ -36,20 +31,6 @@ const Products: React.FC = () => {
     return join(name, emailJoin, passwordJoin);
   };
 
-=======
-  const { login, logout } = useContext(AuthContext);
-
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    if (!email) return alert('Escreva um email válido');
-    if (!password) return alert('Escreva uma senha válida');
-    return login(email, password);
-  };
-
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
   return (
     <>
       <Head
@@ -65,7 +46,6 @@ const Products: React.FC = () => {
         <div className="row">
           <div className="col-md-5 offset-md-1">
             <h2>Já sou cadastrado</h2>
-<<<<<<< HEAD
             {error ? (
               <div className="error">
                 <i className="fas fa-exclamation-circle" />
@@ -74,8 +54,6 @@ const Products: React.FC = () => {
             ) : (
               ''
             )}
-=======
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
             <form onSubmit={(e) => handleSignIn(e)}>
               <label htmlFor="email">
                 <input
@@ -83,26 +61,16 @@ const Products: React.FC = () => {
                   placeholder="E-mail"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
-<<<<<<< HEAD
                   className={inputEmail ? 'erroInput' : ''}
-=======
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
                 />
               </label>
               <label htmlFor="password">
                 <input
-<<<<<<< HEAD
                   type="password"
                   placeholder="Senha"
                   id="password"
                   onChange={(e) => setPassword(e.target.value)}
                   className={inputPassword ? 'erroInput' : ''}
-=======
-                  type="text"
-                  placeholder="Senha"
-                  id="password"
-                  onChange={(e) => setPassword(e.target.value)}
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
                 />
               </label>
               <button type="submit" className="btn-primary">
@@ -137,22 +105,8 @@ const Products: React.FC = () => {
                   onChange={(e) => setPasswordJoin(e.target.value)}
                 />
               </label>
-<<<<<<< HEAD
               <button
                 type="submit"
-=======
-              <div className="pjProfile">
-                <button type="button">
-                  <span className="checkPj" />
-                  <div>
-                    <p>Cadastro Pessoa Jurídica</p>
-                    <span>Esse cadastro será utilizado para uma Empresa</span>
-                  </div>
-                </button>
-              </div>
-              <button
-                type="button"
->>>>>>> b92afcadb1305a227a7a60b5d98d1489916ae625
                 className="btn-primary"
                 onClick={() => logout()}
               >
