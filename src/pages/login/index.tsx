@@ -11,24 +11,24 @@ const Products: React.FC = () => {
     console.log(error);
   }, [error]);
 
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [emailJoin, setEmailJoin] = useState<string>('');
-  const [passwordJoin, setPasswordJoin] = useState<string>('');
-  const [name, setName] = useState<string>('');
+  const [emailSignin, setEmailSignin] = useState<string>('');
+  const [passwordSignin, setPasswordSignin] = useState<string>('');
+  const [emailSignup, setEmailSignup] = useState<string>('');
+  const [passwordSignup, setPasswordSignup] = useState<string>('');
+  const [nameSignup, setNameSignup] = useState<string>('');
 
   const handleSignIn = (e) => {
     setinputEmail(false);
     setinputPassword(false);
     e.preventDefault();
-    if (!email) return setinputEmail(true);
-    if (!password) return setinputPassword(true);
-    return login(email, password);
+    if (!emailSignin) return setinputEmail(true);
+    if (!passwordSignin) return setinputPassword(true);
+    return login(emailSignin, passwordSignin);
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    return join(name, emailJoin, passwordJoin);
+    return join(nameSignup, emailSignup, passwordSignup);
   };
 
   return (
@@ -46,13 +46,11 @@ const Products: React.FC = () => {
         <div className="row">
           <div className="col-md-5 offset-md-1">
             <h2>Já sou cadastrado</h2>
-            {error ? (
+            {error && !error.field && (
               <div className="error">
                 <i className="fas fa-exclamation-circle" />
                 {error.message}
               </div>
-            ) : (
-              ''
             )}
             <form onSubmit={(e) => handleSignIn(e)}>
               <label htmlFor="email">
@@ -60,18 +58,38 @@ const Products: React.FC = () => {
                   type="text"
                   placeholder="E-mail"
                   id="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={inputEmail ? 'erroInput' : ''}
+                  onChange={(e) => setEmailSignin(e.target.value)}
+                  className={
+                    (error && error.field === 'loginEmail') || inputEmail
+                      ? 'erroInput'
+                      : ''
+                  }
                 />
+                {error && error.field === 'loginEmail' && (
+                  <div className="error">
+                    <i className="fas fa-exclamation-circle" />
+                    {error.message}
+                  </div>
+                )}
               </label>
               <label htmlFor="password">
                 <input
                   type="password"
                   placeholder="Senha"
                   id="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={inputPassword ? 'erroInput' : ''}
+                  onChange={(e) => setPasswordSignin(e.target.value)}
+                  className={
+                    (error && error.field === 'loginPassword') || inputPassword
+                      ? 'erroInput'
+                      : ''
+                  }
                 />
+                {error && error.field === 'loginPassword' && (
+                  <div className="error">
+                    <i className="fas fa-exclamation-circle" />
+                    {error.message}
+                  </div>
+                )}
               </label>
               <button type="submit" className="btn-primary">
                 Entrar
@@ -86,24 +104,42 @@ const Products: React.FC = () => {
                   type="text"
                   placeholder="Nome"
                   id="name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setNameSignup(e.target.value)}
                 />
+                {error && error.field === 'registerName' && (
+                  <div className="error">
+                    <i className="fas fa-exclamation-circle" />
+                    {error.message}
+                  </div>
+                )}
               </label>
-              <label htmlFor="emailJoin">
+              <label htmlFor="emailSignup">
                 <input
                   type="text"
                   placeholder="E-mail"
-                  id="emailJoin"
-                  onChange={(e) => setEmailJoin(e.target.value)}
+                  id="emailSignup"
+                  onChange={(e) => setEmailSignup(e.target.value)}
                 />
+                {error && error.field === 'registerEmail' && (
+                  <div className="error">
+                    <i className="fas fa-exclamation-circle" />
+                    {error.message}
+                  </div>
+                )}
               </label>
-              <label htmlFor="passwordJoin">
+              <label htmlFor="passwordSignup">
                 <input
                   type="password"
                   placeholder="Senha"
-                  id="passwordJoin"
-                  onChange={(e) => setPasswordJoin(e.target.value)}
+                  id="passwordSignup"
+                  onChange={(e) => setPasswordSignup(e.target.value)}
                 />
+                {error && error.field === 'registerPassword' && (
+                  <div className="error">
+                    <i className="fas fa-exclamation-circle" />
+                    {error.message}
+                  </div>
+                )}
               </label>
               <button
                 type="submit"

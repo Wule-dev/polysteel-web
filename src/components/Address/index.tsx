@@ -56,16 +56,6 @@ const Address = (): JSX.Element => {
 
   return (
     <>
-      <h1>Adicionar Endereço</h1>
-      <label htmlFor="nome">
-        <span>Nome do Endereço</span>
-        <input
-          autoComplete="false"
-          type="text"
-          placeholder="Nome do Endereço"
-          id="nome"
-        />
-      </label>
       <label htmlFor="cep">
         <span>CEP</span>
         <div className="row">

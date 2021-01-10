@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Tabs.module.css';
 import { getHomeDestaqData } from '../../services/http-client';
 import { HomeDestaqProps } from '../../types';
+import { MyButton } from '..';
 
 const Tabs = (): JSX.Element => {
   const [user, setUser] = useState<HomeDestaqProps>({
@@ -63,7 +64,7 @@ const Tabs = (): JSX.Element => {
       </div>
       <div className={`row ${styles.tabContent}`}>
         <div className="col-md-3">
-          <a href="/product/placa-premiacao">
+          <MyButton to="/product/placa-premiacao">
             <img
               src="/images/placa-inauguracao.jpg"
               alt="Placa Inauguração"
@@ -74,7 +75,7 @@ const Tabs = (): JSX.Element => {
               A partir de
               <span>R$ 150,00</span>
             </div>
-          </a>
+          </MyButton>
         </div>
       </div>
     </div>

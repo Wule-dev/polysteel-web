@@ -7,6 +7,7 @@ import {
   Breadcrumb,
   About,
   Painel,
+  MyButton,
 } from '../../components';
 import styles from './Product.module.css';
 
@@ -23,7 +24,7 @@ const Product = (): JSX.Element => {
       />
       <Header />
       <Breadcrumb>
-        <a href="/products">Produtos</a>
+        <MyButton to="/products">Produtos</MyButton>
         <span>{product}</span>
       </Breadcrumb>
       <div className="container pageContent">
@@ -69,13 +70,12 @@ const Product = (): JSX.Element => {
               </div>
             </div>
             <p>
-              <a
-                href={`/product/customize/${product}`}
-                type="button"
+              <MyButton
+                to={`/product/customize/${product}`}
                 className={styles.btnBuy}
               >
                 Personalizar Produto
-              </a>
+              </MyButton>
               <span className={styles.obs}>
                 Ao clicar em Personalizar Produto, você poderá configurar e
                 personalizar a placa na próxima página.
@@ -114,13 +114,12 @@ const Product = (): JSX.Element => {
       <div className={styles.banner}>
         <div className="container">
           <h2>Peça a sua Placa de Inauguração</h2>
-          <a
-            href={`/product/customize/${product}`}
-            type="button"
+          <MyButton
+            to={`/product/customize/${product}`}
             className={styles.btnBuy}
           >
             Personalizar Produto
-          </a>
+          </MyButton>
         </div>
       </div>
       <Footer />

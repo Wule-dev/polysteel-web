@@ -19,6 +19,7 @@ export const AuthProvider: React.FC = ({ children }: any) => {
 
   const login = async (email: string, password: string): Promise<void> => {
     try {
+      setError(null);
       const { data: token } = await api.post('/signin', { email, password });
       if (token) {
         Cookies.set('token', token, { expires: 60 });
@@ -27,8 +28,7 @@ export const AuthProvider: React.FC = ({ children }: any) => {
         if (data) {
           Cookies.set('user', data, { expires: 60 });
           setUser(data);
-          setError(null);
-          router.push('/cart');
+          router.push('/user/profile');
         }
         return;
       }
@@ -60,6 +60,14 @@ export const AuthProvider: React.FC = ({ children }: any) => {
     router.push('/login');
   };
 
+  const userData = () => {
+    return user;
+  };
+
+  useEffect(() => {
+    setError(null);
+  }, [router.pathname]);
+
   useEffect(() => {
     const basePath = 'user'; // TODO: criar padrão de pathname para rota autenticada (está como 'cart' temporariamente)
     const checkPath = router.pathname.indexOf(basePath) > -1;
@@ -85,6 +93,7 @@ export const AuthProvider: React.FC = ({ children }: any) => {
         login,
         logout,
         join,
+        userData,
         error,
       }}
     >

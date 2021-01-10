@@ -1,8 +1,17 @@
-import React from 'react';
-import { Head, Header, Footer, Breadcrumb } from '../../../components';
+import React, { useContext } from 'react';
+import {
+  Head,
+  Header,
+  Footer,
+  Breadcrumb,
+  MyButton,
+} from '../../../components';
+import AuthContext from '../../../contexts/auth';
 import styles from './Profile.module.css';
 
 const HomeUser = (): JSX.Element => {
+  const { userData } = useContext(AuthContext);
+  const user = userData();
   return (
     <>
       <Head
@@ -12,7 +21,7 @@ const HomeUser = (): JSX.Element => {
       />
       <Header />
       <Breadcrumb>
-        <a href="/user/home">Minha Conta</a>
+        <MyButton to="/user/home">Minha Conta</MyButton>
         <span>Meus Dados</span>
       </Breadcrumb>
       <div className={`container pageContent ${styles.view}`}>
@@ -20,46 +29,52 @@ const HomeUser = (): JSX.Element => {
           <div className="col-md-6">
             <h1>
               Meus Dados
-              <a href="/edit">Alterar</a>
+              <MyButton to="/edit">Alterar</MyButton>
             </h1>
             <p>
               <span>Nome</span>
-              José Alves da Silva
+              {user.name}
             </p>
             <p>
               <span>CPF</span>
-              000.000.000-00
+              {user.cpf}
             </p>
             <p>
               <span>E-mail</span>
-              teste@teste.com.br
+              {user.email}
             </p>
             <p>
               <span>Telefone</span>
-              (11) 90000-0000
+              {user.phone}
             </p>
           </div>
           <div className="col-md-6">
-            <h1>
-              Empresa
-              <a href="/edit">Alterar</a>
-            </h1>
-            <p>
-              <span>Nome</span>
-              Doceria LTDA
-            </p>
-            <p>
-              <span>CNPJ</span>
-              xx. xxx/0001-??
-            </p>
-            <p>
-              <span>E-mail</span>
-              teste@teste.com.br
-            </p>
-            <p>
-              <span>Telefone</span>
-              (11) 90000-0000
-            </p>
+            {user.company ? (
+              <>
+                <h1>
+                  Empresa
+                  <MyButton to="/edit">Alterar</MyButton>
+                </h1>
+                <p>
+                  <span>Nome</span>
+                  Doceria LTDA
+                </p>
+                <p>
+                  <span>CNPJ</span>
+                  xx. xxx/0001-??
+                </p>
+                <p>
+                  <span>E-mail</span>
+                  teste@teste.com.br
+                </p>
+                <p>
+                  <span>Telefone</span>
+                  (11) 90000-0000
+                </p>
+              </>
+            ) : (
+              ''
+            )}
           </div>
         </div>
         <div className="row">
@@ -67,23 +82,22 @@ const HomeUser = (): JSX.Element => {
             <h2>Endereços</h2>
           </div>
           <div className={`col-md-4 ${styles.addCard}`}>
-            <a href="/user/address/add">Adicionar Novo</a>
+            <MyButton to="/user/address/add">Adicionar Novo</MyButton>
           </div>
           <div className={`col-md-4 ${styles.card}`}>
             <div>
-              <span>Casa</span>
               <p>
-                Rua das Acácias, 000
+                {user.address.street}
                 <br />
-                Jd Residêncial das Palmas
+                {user.address.neighborhood}
                 <br />
-                São Paulo - SP
+                {`${user.address.city} - ${user.address.state}`}
                 <br />
-                07503-000
+                {user.address.cep}
               </p>
               <div className={styles.controls}>
-                <a href="/user/address/edit">Alterar</a>
-                <a href="/user/address/exclude">Excluir</a>
+                <MyButton to="/user/address/edit">Alterar</MyButton>
+                <MyButton to="/user/address/exclude">Excluir</MyButton>
               </div>
             </div>
           </div>

@@ -1,44 +1,14 @@
 {
-  "image": [
-    "http://localhost:3001/images/placa-inauguracao.jpg",
-    "http://localhost:3001/images/placa-inauguracao.jpg"
-  ],
-  "name": "Placas de Inauguração",
-  "price": 150.00,
-  "description": "* Valor simulando a compra de uma placa em Aço Inox Gravado à laser, com medida de 30cmx20cm, sem opcionais, com acabamento em Dupla Face, não considerando o valor de frete.",
-  "category": "Placas de Inauguração",
-  "sizes": [
-    {
-      "size": "10x15",
-      "materials": [
-        {
-          "material": "Aço Inox Escovado",
-          "methods": [
-            {
-              "method": "Gravação em baixo relevo por foto-corrosão, printura automotiva",
-              "models": [
-                {
-                  "model": "Modelo Capa",
-                  "options": [
-                    {
-                      "option": "Marca d'agua",
-                      "value": 45.00
-                    },
-                    {
-                      "option": "Borda Polida",
-                      "value": 45.00
-                    },
-                    {
-                      "option": "Sem Acabamentos",
-                      "value": 45.00
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+  "tipo_placa": {
+    "medida": {
+      "material": {
+        "tipo_impressão": {
+          "tipo": "tipo",
+          "valor": 
+        },
+        "modelo": "modelo",
+        "opacional": ["opções"]
+      }
     }
-  ]
+  }
 }

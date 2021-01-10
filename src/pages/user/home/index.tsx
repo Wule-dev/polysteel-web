@@ -1,5 +1,11 @@
 import React from 'react';
-import { Head, Header, Footer, Breadcrumb } from '../../../components';
+import {
+  Head,
+  Header,
+  Footer,
+  Breadcrumb,
+  MyButton,
+} from '../../../components';
 import styles from './Home.module.css';
 
 const HomeUser = (): JSX.Element => {
@@ -22,22 +28,22 @@ const HomeUser = (): JSX.Element => {
         </div>
         <div className="row">
           <div className="col-md-4">
-            <a href="/user/profile" className={styles.homeBtn}>
+            <MyButton to="/user/profile" className={styles.homeBtn}>
               <i className="far fa-user-circle" />
               <div>
                 <h2>Meus Dados</h2>
                 <p>Alterar informações pessoais ou endereços cadastrados.</p>
               </div>
-            </a>
+            </MyButton>
           </div>
           <div className="col-md-4">
-            <a href="/user/order" className={styles.homeBtn}>
+            <MyButton to="/user/order" className={styles.homeBtn}>
               <i className="far fa-calendar" />
               <div>
                 <h2>Pedidos</h2>
                 <p>Alterar informações pessoais ou endereços cadastrados.</p>
               </div>
-            </a>
+            </MyButton>
           </div>
         </div>
       </div>

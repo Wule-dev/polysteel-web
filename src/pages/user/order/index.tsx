@@ -1,5 +1,12 @@
 import React from 'react';
-import { Head, Header, Footer, Breadcrumb, Orders } from '../../../components';
+import {
+  Head,
+  Header,
+  Footer,
+  Breadcrumb,
+  Orders,
+  MyButton,
+} from '../../../components';
 
 const Order = (): JSX.Element => {
   return (
@@ -11,7 +18,7 @@ const Order = (): JSX.Element => {
       />
       <Header />
       <Breadcrumb>
-        <a href="/user/home">Minha Conta</a>
+        <MyButton to="/user/home">Minha Conta</MyButton>
         <span>Pedidos</span>
       </Breadcrumb>
       <div className="container">
