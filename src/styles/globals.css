@@ -305,6 +305,49 @@ textarea {
   margin-right: 10px;
 }
 
+.userButton {
+  position: relative;
+}
+
+.userButton:hover .submenuUser {
+  display: block;
+  max-height: 100vh;
+}
+
+.submenuUser {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: white;
+  border: 1px solid #EEE;
+  padding: 20px;
+  margin-top: 35px;
+  z-index: 12;
+  border-radius: 5px;
+  min-width: 200px;
+  max-height: 0px;
+  overflow: hidden;
+  display: none;
+  transition: all 0.5s;
+}
+
+.submenuUser h2 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 12pt;
+  margin-bottom: 10px;
+}
+
+.submenuUser a, button {
+  display: block!important;
+}
+
+.submenuUser button {
+  padding: 5px 15px;
+  width: 100%;
+  text-align: left;
+}
+
 @media (max-width: 767px) {
   .topPainel .painel {
     padding: 0px;

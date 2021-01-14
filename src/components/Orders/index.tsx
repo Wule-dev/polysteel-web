@@ -1,5 +1,6 @@
 import React from 'react';
 import { OrderProps } from '../../types';
+import { MyButton } from '..';
 import styles from './Orders.module.css';
 
 const Orders: React.FC<OrderProps> = ({
@@ -102,7 +103,7 @@ const Orders: React.FC<OrderProps> = ({
           </div>
           <div className={`row ${styles.details}`}>
             <div className="col-md-12 text-center">
-              <a href={`/user/order/${order}`}>ver detalhes</a>
+              <MyButton to={`/user/order/${order}`}>ver detalhes</MyButton>
             </div>
           </div>
         </>

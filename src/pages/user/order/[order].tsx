@@ -1,6 +1,13 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Head, Header, Footer, Breadcrumb, Orders } from '../../../components';
+import {
+  Head,
+  Header,
+  Footer,
+  Breadcrumb,
+  Orders,
+  MyButton,
+} from '../../../components';
 import styles from './Order.module.css';
 
 const OrderDetails = (): JSX.Element => {
@@ -16,8 +23,8 @@ const OrderDetails = (): JSX.Element => {
       />
       <Header />
       <Breadcrumb>
-        <a href="/user/home">Minha Conta</a>
-        <a href="/user/order">Pedidos</a>
+        <MyButton to="/user/home">Minha Conta</MyButton>
+        <MyButton to="/user/order">Pedidos</MyButton>
         <span>{order}</span>
       </Breadcrumb>
       <div className="container">

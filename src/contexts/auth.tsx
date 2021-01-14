@@ -28,7 +28,7 @@ export const AuthProvider: React.FC = ({ children }: any) => {
         if (data) {
           Cookies.set('user', data, { expires: 60 });
           setUser(data);
-          router.push('/user/profile');
+          router.push('/user/home');
         }
         return;
       }

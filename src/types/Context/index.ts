@@ -8,7 +8,7 @@ export type AuthContextType = {
     email: string,
     password: string,
   ) => Promise<any> | undefined;
-  userData: () => {
+  userData?: () => {
     actived: boolean;
     address: {
       additionalAddress: string;

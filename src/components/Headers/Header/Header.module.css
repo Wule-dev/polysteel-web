@@ -30,6 +30,7 @@
 .searchBtn {
   position: absolute;
   right: 0px;
+  top: 0px;
   padding: 10px 20px;
   border-radius: 0px 4px 4px 0px;
   background: #FF4C00;

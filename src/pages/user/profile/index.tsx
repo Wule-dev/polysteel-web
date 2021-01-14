@@ -10,8 +10,7 @@ import AuthContext from '../../../contexts/auth';
 import styles from './Profile.module.css';
 
 const HomeUser = (): JSX.Element => {
-  const { userData } = useContext(AuthContext);
-  const user = userData();
+  const { user } = useContext(AuthContext);
   return (
     <>
       <Head
@@ -29,7 +28,7 @@ const HomeUser = (): JSX.Element => {
           <div className="col-md-6">
             <h1>
               Meus Dados
-              <MyButton to="/edit">Alterar</MyButton>
+              <MyButton to="/user/edit-profile/">Alterar</MyButton>
             </h1>
             <p>
               <span>Nome</span>

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import Link from 'next/link';
 import styles from './Header.module.css';
+import AuthContext from '../../../contexts/auth';
 import { MyButton } from '../..';
 
 const Header: React.FC = () => {
+  const { user, logout } = useContext(AuthContext);
   const [productsMenu, setProductsMenu] = useState(false);
 
   return (
@@ -19,9 +22,15 @@ const Header: React.FC = () => {
             </MyButton>
           </div>
           <div className={`col-auto ${styles.mobileMenu}`}>
-            <MyButton to="/login">
+            <MyButton to={user ? '/user/home' : '/login'}>
               <i className="fa fa-user" />
             </MyButton>
+            <div className="submenuUser">
+              <h2>Sua Conta</h2>
+              <MyButton to="/user/home">Perfil</MyButton>
+              <MyButton to="/user/order">Seus Pedidos</MyButton>
+              <MyButton to="/user/home">Sair</MyButton>
+            </div>
             <MyButton to="/cart">
               <i className="fa fa-shopping-cart" />
             </MyButton>
@@ -135,9 +144,24 @@ const Header: React.FC = () => {
                 </MyButton>
               </li>
             </ul>
-            <MyButton to="/login">
-              <i className="fa fa-user" />
-            </MyButton>
+            <div className="userButton">
+              <MyButton to={user ? '/user/home' : '/login'}>
+                <i className="fa fa-user" />
+              </MyButton>
+              {user !== null ? (
+                <div className="submenuUser">
+                  <h2>Sua Conta</h2>
+                  <MyButton to="/user/home">Sua Conta</MyButton>
+                  <MyButton to="/user/profile">Seu Perfil</MyButton>
+                  <MyButton to="/user/order">Seus Pedidos</MyButton>
+                  <button type="button" onClick={() => logout()}>
+                    Sair
+                  </button>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
             <MyButton to="/cart">
               <i className="fa fa-shopping-cart" />
             </MyButton>
