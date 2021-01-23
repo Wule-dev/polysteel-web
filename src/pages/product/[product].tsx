@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
 import {
   Head,
@@ -10,10 +10,13 @@ import {
   MyButton,
 } from '../../components';
 import styles from './Product.module.css';
+import ProductContext from '../../contexts/product';
 
 const Product = (): JSX.Element => {
   const router = useRouter();
-  const { product } = router.query;
+  const { productId } = router.query;
+  const { product } = useContext(ProductContext);
+  console.log(product);
 
   return (
     <>
@@ -25,7 +28,7 @@ const Product = (): JSX.Element => {
       <Header />
       <Breadcrumb>
         <MyButton to="/products">Produtos</MyButton>
-        <span>{product}</span>
+        <span>texto</span>
       </Breadcrumb>
       <div className="container pageContent">
         <div className="row">
@@ -44,7 +47,7 @@ const Product = (): JSX.Element => {
             </Painel>
           </div>
           <div className={`col-md-6 ${styles.productDetails}`}>
-            <h1>Placa de Inauguração</h1>
+            <h1>Teste</h1>
             <p className={styles.subtitle}>
               Transforme um evento em uma data especial
             </p>
@@ -71,7 +74,7 @@ const Product = (): JSX.Element => {
             </div>
             <p>
               <MyButton
-                to={`/product/customize/${product}`}
+                to={`/product/customize/${productId}`}
                 className={styles.btnBuy}
               >
                 Personalizar Produto
@@ -115,7 +118,7 @@ const Product = (): JSX.Element => {
         <div className="container">
           <h2>Peça a sua Placa de Inauguração</h2>
           <MyButton
-            to={`/product/customize/${product}`}
+            to={`/product/customize/${productId}`}
             className={styles.btnBuy}
           >
             Personalizar Produto

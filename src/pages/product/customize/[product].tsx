@@ -27,6 +27,7 @@ const Product = (): JSX.Element => {
           <MyButton to={`/product/${product}`}>{product}</MyButton>
           <span>Customizar</span>
         </Breadcrumb>
+
         <div className="container">
           <div className="row">
             <div className="col-md-12">
