@@ -10,15 +10,19 @@ import {
   MyButton,
 } from '../../components';
 import styles from './Product.module.css';
-import ProductContext from '../../contexts/product';
+import ProductsContext from '../../contexts/product';
 
 const Product = (): JSX.Element => {
   const router = useRouter();
+  const { getProductByQuery, currentProduct } = useContext(ProductsContext);
   const { product } = router.query;
 
   useEffect(() => {
-    console.log(product);
-  }, [router]);
+    getProductByQuery(product);
+  }, [product, currentProduct, getProductByQuery]);
+
+  if (!currentProduct)
+    return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
 
   return (
     <>
@@ -49,7 +53,7 @@ const Product = (): JSX.Element => {
             </Painel>
           </div>
           <div className={`col-md-6 ${styles.productDetails}`}>
-            <h1>Teste</h1>
+            <h1>{currentProduct.id}</h1>
             <p className={styles.subtitle}>
               Transforme um evento em uma data especial
             </p>
