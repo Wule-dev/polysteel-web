@@ -1,35 +1,36 @@
 import React, { createContext, useState, useEffect } from 'react';
+import api from '../services/api';
 
-const ProductContext = createContext<any>({
-  product: null,
+const ProductsContext = createContext<{
+  products: any | null;
+  getProducts: () => void;
+}>({
+  products: null,
+  getProducts: () => null,
 });
 
-export const ProductProvider: React.FC = ({ children }: any) => {
-  const [product, setProduct] = useState(null);
+export const ProductsProvider: React.FC = ({ children }: any) => {
+  const [products, setProducts] = useState([]);
 
-  const getProduct = async (): Promise<void> => {
+  const getProducts = async (): Promise<void> => {
     try {
-      await fetch('http://localhost:3001/products.json')
-        .then((response) => {
-          return response.json();
-        })
-        .then((response) => {
-          setProduct(response);
-        });
+      const { data } = await api.get('/');
+      if (data) setProducts(data);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    getProduct();
+    getProducts();
   }, []);
 
   return (
-    <ProductContext.Provider value={{ product, getProduct }}>
+    <ProductsContext.Provider value={{ products, getProducts }}>
       {children}
-    </ProductContext.Provider>
+    </ProductsContext.Provider>
   );
 };
 
-export default ProductContext;
+export default ProductsContext;

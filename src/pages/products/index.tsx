@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ProductsContext from '../../contexts/product';
 import { Head, Header, Footer, Breadcrumb } from '../../components';
 
 const Products = (): JSX.Element => {
+  const { products } = useContext(ProductsContext);
   return (
     <>
       <Head
@@ -12,6 +14,9 @@ const Products = (): JSX.Element => {
       <Header />
       <Breadcrumb>
         <span>Produtos</span>
+        {products.map((item) => (
+          <p key={item.id}>{item.id}</p>
+        ))}
       </Breadcrumb>
       <Footer />
     </>

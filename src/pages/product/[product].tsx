@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import {
   Head,
@@ -14,9 +14,11 @@ import ProductContext from '../../contexts/product';
 
 const Product = (): JSX.Element => {
   const router = useRouter();
-  const { productId } = router.query;
-  const { product } = useContext(ProductContext);
-  console.log(product);
+  const { product } = router.query;
+
+  useEffect(() => {
+    console.log(product);
+  }, [router]);
 
   return (
     <>
@@ -74,7 +76,7 @@ const Product = (): JSX.Element => {
             </div>
             <p>
               <MyButton
-                to={`/product/customize/${productId}`}
+                to={`/product/customize/${product}`}
                 className={styles.btnBuy}
               >
                 Personalizar Produto
@@ -118,7 +120,7 @@ const Product = (): JSX.Element => {
         <div className="container">
           <h2>Peça a sua Placa de Inauguração</h2>
           <MyButton
-            to={`/product/customize/${productId}`}
+            to={`/product/customize/${product}`}
             className={styles.btnBuy}
           >
             Personalizar Produto
