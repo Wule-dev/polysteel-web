@@ -21,7 +21,6 @@ export const ProductsProvider: React.FC = ({ children }: any) => {
     try {
       const { data } = await api.get('/');
       if (data) setProducts(data);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
