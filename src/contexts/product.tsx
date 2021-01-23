@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { Loading } from './auth';
 
 const ProductContext = createContext<any>({
   product: null,
@@ -7,7 +6,6 @@ const ProductContext = createContext<any>({
 
 export const ProductProvider: React.FC = ({ children }: any) => {
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const getProduct = async (): Promise<void> => {
     try {
@@ -24,9 +22,7 @@ export const ProductProvider: React.FC = ({ children }: any) => {
   };
 
   useEffect(() => {
-    setLoading(true);
     getProduct();
-    setLoading(false);
   }, []);
 
   return (
