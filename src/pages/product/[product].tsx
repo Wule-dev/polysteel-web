@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import {
   Head,
@@ -10,10 +10,19 @@ import {
   MyButton,
 } from '../../components';
 import styles from './Product.module.css';
+import ProductsContext from '../../contexts/product';
 
 const Product = (): JSX.Element => {
   const router = useRouter();
+  const { getProductByQuery, currentProduct } = useContext(ProductsContext);
   const { product } = router.query;
+
+  useEffect(() => {
+    getProductByQuery(product);
+  }, [product, currentProduct, getProductByQuery]);
+
+  if (!currentProduct)
+    return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
 
   return (
     <>
@@ -25,7 +34,7 @@ const Product = (): JSX.Element => {
       <Header />
       <Breadcrumb>
         <MyButton to="/products">Produtos</MyButton>
-        <span>{product}</span>
+        <span>texto</span>
       </Breadcrumb>
       <div className="container pageContent">
         <div className="row">
@@ -44,7 +53,7 @@ const Product = (): JSX.Element => {
             </Painel>
           </div>
           <div className={`col-md-6 ${styles.productDetails}`}>
-            <h1>Placa de Inauguração</h1>
+            <h1>{currentProduct.id}</h1>
             <p className={styles.subtitle}>
               Transforme um evento em uma data especial
             </p>

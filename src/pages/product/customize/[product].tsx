@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import {
   Head,
@@ -6,12 +6,22 @@ import {
   Footer,
   Breadcrumb,
   MyButton,
+  ListProperties,
 } from '../../../components';
 import styles from './Customize.module.css';
+import ProductsContext from '../../../contexts/product';
 
 const Product = (): JSX.Element => {
   const router = useRouter();
+  const { getProductByQuery, currentProduct } = useContext(ProductsContext);
   const { product } = router.query;
+
+  useEffect(() => {
+    getProductByQuery(product);
+  }, [product, currentProduct, getProductByQuery]);
+
+  if (!currentProduct)
+    return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
 
   return (
     <>
@@ -30,16 +40,14 @@ const Product = (): JSX.Element => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h3>Personalize a sua Placa de Inauguração</h3>
+              <h3>{`Personalize a sua ${product}`}</h3>
             </div>
-            <div className="col-md-8">
-              <div className={`row ${styles.contain}`}>
-                <div className="col-md-12">
-                  <h4>Tamanho</h4>
-                </div>
-                <div className="col-md-4">20 x 30cm</div>
-              </div>
-            </div>
+            {!currentProduct ? (
+              <div>Carregando</div>
+            ) : (
+              <ListProperties data={currentProduct} />
+            )}
+
             <div className="col-md-4">
               <div className={`row ${styles.contain} ${styles.fixedTop}`}>
                 Resumo
