@@ -16,7 +16,6 @@ const Tabs = (): JSX.Element => {
     categoryId: 'wueliton',
   });
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getHomeDestaq = async () => {
     const { data } = await getHomeDestaqData(tab.categoryId);
     setUser(data);
@@ -24,7 +23,7 @@ const Tabs = (): JSX.Element => {
 
   useEffect(() => {
     getHomeDestaq();
-  }, [getHomeDestaq, tab]);
+  }, []);
 
   return (
     <div className="container">
