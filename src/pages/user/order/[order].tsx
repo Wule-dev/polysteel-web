@@ -12,7 +12,7 @@ import styles from './Order.module.css';
 
 const OrderDetails = (): JSX.Element => {
   const router = useRouter();
-  const { order } = router.query;
+  const params: { order?: string } = router.query;
 
   return (
     <>
@@ -25,10 +25,10 @@ const OrderDetails = (): JSX.Element => {
       <Breadcrumb>
         <MyButton to="/user/home">Minha Conta</MyButton>
         <MyButton to="/user/order">Pedidos</MyButton>
-        <span>{order}</span>
+        <span>{params.order}</span>
       </Breadcrumb>
       <div className="container">
-        <h1>{`Detalhes do Pedido ${order}`}</h1>
+        <h1>{`Detalhes do Pedido ${params.order}`}</h1>
         <Orders
           date="23/12/2020"
           order={5454646}

@@ -15,11 +15,11 @@ import ProductsContext from '../../contexts/product';
 const Product = (): JSX.Element => {
   const router = useRouter();
   const { getProductByQuery, currentProduct } = useContext(ProductsContext);
-  const { product } = router.query;
+  const params: { product?: string } = router.query;
 
   useEffect(() => {
-    getProductByQuery(product);
-  }, [product, currentProduct, getProductByQuery]);
+    getProductByQuery(params.product);
+  }, [params.product, currentProduct, getProductByQuery]);
 
   if (!currentProduct)
     return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
@@ -80,7 +80,7 @@ const Product = (): JSX.Element => {
             </div>
             <p>
               <MyButton
-                to={`/product/customize/${product}`}
+                to={`/product/customize/${params.product}`}
                 className={styles.btnBuy}
               >
                 Personalizar Produto
@@ -124,7 +124,7 @@ const Product = (): JSX.Element => {
         <div className="container">
           <h2>Peça a sua Placa de Inauguração</h2>
           <MyButton
-            to={`/product/customize/${product}`}
+            to={`/product/customize/${params.product}`}
             className={styles.btnBuy}
           >
             Personalizar Produto

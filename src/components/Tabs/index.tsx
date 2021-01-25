@@ -63,13 +63,13 @@ const Tabs = (): JSX.Element => {
       </div>
       <div className={`row ${styles.tabContent}`}>
         <div className="col-md-3">
-          <MyButton to="/product/placa-premiacao">
+          <MyButton to="/product/placahomenagem">
             <img
               src="/images/placa-inauguracao.jpg"
-              alt="Placa Inauguração"
+              alt="Placa Homenagem"
               className="img-responsive"
             />
-            <p>PLACAS DE INAUGURAÇÃO</p>
+            <p>PLACAS DE HOMENAGEM</p>
             <div className={styles.price}>
               A partir de
               <span>R$ 150,00</span>

@@ -14,11 +14,11 @@ import ProductsContext from '../../../contexts/product';
 const Product = (): JSX.Element => {
   const router = useRouter();
   const { getProductByQuery, currentProduct } = useContext(ProductsContext);
-  const { product } = router.query;
+  const params: { product?: string } = router.query;
 
   useEffect(() => {
-    getProductByQuery(product);
-  }, [product, currentProduct, getProductByQuery]);
+    getProductByQuery(params.product);
+  }, [params.product, currentProduct, getProductByQuery]);
 
   if (!currentProduct)
     return <div style={{ backgroundColor: 'red' }}>Carregando</div>;
@@ -34,13 +34,15 @@ const Product = (): JSX.Element => {
       <div className={styles.grayBack}>
         <Breadcrumb>
           <MyButton to="/products">Produtos</MyButton>
-          <MyButton to={`/product/${product}`}>{product}</MyButton>
+          <MyButton to={`/product/${params.product}`}>
+            {params.product}
+          </MyButton>
           <span>Customizar</span>
         </Breadcrumb>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h3>{`Personalize a sua ${product}`}</h3>
+              <h3>{`Personalize a sua ${params.product}`}</h3>
             </div>
             {!currentProduct ? (
               <div>Carregando</div>
