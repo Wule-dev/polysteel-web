@@ -2,8 +2,8 @@ import Axios from 'axios';
 
 const urls = {
   test: `http://localhost:3000`,
-  development: 'http://polysteel-api-dev.herokuapp.com',
-  production: 'http://polysteel-api-prod.herokuapp.com',
+  development: 'http://localhost:3000',
+  production: 'http://localhost:3000',
 };
 const api = Axios.create({
   baseURL: urls[process.env.NODE_ENV],

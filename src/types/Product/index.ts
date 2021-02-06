@@ -4,7 +4,15 @@ export type Product = {
 
 export type ProductListProps = {
   data: {
-    attributes: [
+    id: string;
+    name: string;
+    description: string;
+    hasCustomFormat: boolean;
+    images: string[];
+    category: string[];
+    price: number;
+    measure: string;
+    attributes?: [
       {
         key: string;
         name: string;
@@ -12,6 +20,7 @@ export type ProductListProps = {
           {
             image?: string;
             key: string;
+            description?: string;
             name: string;
             position: number;
             price?: [];

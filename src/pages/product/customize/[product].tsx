@@ -49,26 +49,6 @@ const Product = (): JSX.Element => {
             ) : (
               <ListProperties data={currentProduct} />
             )}
-
-            <div className="col-md-4">
-              <div className={`row ${styles.contain} ${styles.fixedTop}`}>
-                Resumo
-                <p>
-                  Placa de Inauguração
-                  <br />
-                  Tamanho: 20 x 30 cm
-                  <br />
-                  Opcional: Sem
-                  <br />
-                  Opcional Acabamento: Dupla Face
-                </p>
-                <p className="text-right">
-                  <MyButton to="/cart" className={styles.btnBuy}>
-                    Continuar
-                  </MyButton>
-                </p>
-              </div>
-            </div>
           </div>
           <div className="row">
             <div className="col-md-8">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ListProperties.module.css';
+import { MyButton } from '../..';
 import { ProductListProps } from '../../../types';
 
 const ListProperties: React.FC<ProductListProps> = ({
@@ -30,75 +31,103 @@ const ListProperties: React.FC<ProductListProps> = ({
   };
 
   return (
-    <div className="col-md-8">
-      {data.attributes &&
-        data.attributes.map((attribute, key) => {
-          return (
-            <div
-              key={attribute.key}
-              className={`row ${styles.contain} ${
-                key > 0 && product[data.attributes[key - 1].name] === undefined
-                  ? styles.hideOption
-                  : ''
-              }`}
-            >
-              <div className="col-md-12">
-                <h4>{attribute.name}</h4>
-              </div>
-              {attribute.options.map((option, keyOption) => {
-                return (
-                  <div
-                    className={`col-md-4 ${
-                      key > 0 &&
-                      disabled[option.key] !== undefined &&
-                      disabled[option.key] === true
-                        ? styles.hideOption
-                        : ''
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      key={option.key}
-                      className={`${styles.btnOption} ${
-                        product[attribute.name] === keyOption
-                          ? styles.btnOptionActive
+    <>
+      <div className="col-md-8">
+        {data.attributes &&
+          data.attributes.map((attribute, key) => {
+            return (
+              <div
+                key={attribute.key}
+                className={`row ${styles.contain} ${
+                  key > 0 &&
+                  product[data.attributes[key - 1].name] === undefined
+                    ? styles.hideOption
+                    : ''
+                }`}
+              >
+                <div className="col-md-12">
+                  <h4>{attribute.name}</h4>
+                </div>
+                {attribute.options.map((option, keyOption) => {
+                  return (
+                    <div
+                      className={`col-md-4 ${
+                        key > 0 &&
+                        disabled[option.key] !== undefined &&
+                        disabled[option.key] === true
+                          ? styles.hideOption
                           : ''
                       }`}
-                      disabled={
-                        key > 0 && disabled[option.key] !== undefined
-                          ? disabled[option.key]
-                          : false
-                      }
-                      onClick={() => {
-                        if (data.attributes[key + 1]) {
-                          handleProductAttributes(
-                            keyOption,
-                            attribute,
-                            data.attributes[key + 1],
-                          );
-                        }
-                        setProduct({
-                          ...product,
-                          [attribute.name]: keyOption,
-                        });
-                      }}
                     >
-                      <div key={option.key}>
-                        <img
-                          src={`/images/${option.image}`}
-                          alt={option.name}
-                          className="img-responsive"
-                        />
-                        <span>{option.name}</span>
-                      </div>
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-    </div>
+                      <button
+                        type="button"
+                        key={option.key}
+                        className={`${styles.btnOption} ${
+                          product[attribute.name] === keyOption
+                            ? styles.btnOptionActive
+                            : ''
+                        }`}
+                        disabled={
+                          key > 0 && disabled[option.key] !== undefined
+                            ? disabled[option.key]
+                            : false
+                        }
+                        onClick={() => {
+                          if (data.attributes[key + 1]) {
+                            handleProductAttributes(
+                              keyOption,
+                              attribute,
+                              data.attributes[key + 1],
+                            );
+                          }
+                          setProduct({
+                            ...product,
+                            [attribute.name]: keyOption,
+                          });
+                        }}
+                      >
+                        <div key={option.key}>
+                          <img
+                            src={`/images/${option.image}`}
+                            alt={option.name}
+                            className="img-responsive"
+                          />
+                          <span>{option.name}</span>
+                        </div>
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+      </div>
+      <div className="col-md-4">
+        <div className={`row ${styles.contain} ${styles.fixedTop}`}>
+          <div className="col-md-12">
+            <p>Resumo</p>
+          </div>
+          <div className="col-12">
+            <strong>{data.name}</strong>
+            <br />
+            {Object.keys(product).map((elem, key) => {
+              return (
+                <>
+                  <strong>{elem}</strong>
+                  {`: ${data.attributes[key].options[product[elem]].name}`}
+                  <br />
+                </>
+              );
+            })}
+          </div>
+          <p className="text-right">
+            <MyButton to="/cart" className={styles.btnBuy}>
+              Continuar
+            </MyButton>
+          </p>
+        </div>
+      </div>
+    </>
   );
 };
 export default ListProperties;
