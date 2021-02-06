@@ -1,9 +1,9 @@
 import Axios from 'axios';
 
 const urls = {
-  test: `http://localhost:3000`,
-  development: 'http://localhost:3000',
-  production: 'http://localhost:3000',
+  test: `https://polysteel-admin-dev.herokuapp.com`,
+  development: 'https://polysteel-admin-dev.herokuapp.com',
+  production: 'https://polysteel-admin-prod.herokuapp.com',
 };
 const api = Axios.create({
   baseURL: urls[process.env.NODE_ENV],
