@@ -141,11 +141,7 @@ const Products: React.FC = () => {
                   </div>
                 )}
               </label>
-              <button
-                type="submit"
-                className="btn-primary"
-                onClick={() => logout()}
-              >
+              <button type="submit" className="btn-primary">
                 Cadastrar
               </button>
             </form>
