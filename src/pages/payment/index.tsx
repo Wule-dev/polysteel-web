@@ -17,8 +17,8 @@ const Payment = (): JSX.Element => {
 
     const interval = setInterval(() => {
       // NÃO TOQUE, É MAGICA!
-      if (window.MercadoPago) {
-        const { MercadoPago } = window;
+      if ((window as any).MercadoPago) {
+        const { MercadoPago } = window as any;
         const mp = new MercadoPago(process.env.NEXT_PUBLIC_MP_PUBLIC_KEY);
         setMercadoPago(mp);
         clearInterval(interval);
